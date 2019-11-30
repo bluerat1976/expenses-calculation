@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html> 
+<head>
+<meta charset="utf-8">
+<title>Counter of expenses</title>
+<link rel="stylesheet" type="text/css" href="style.css"> 
+
+</head>
+
+<body>
+
+    <h2> Expenses counter</h2>
+    
+    <div>
+        <div id="start"></div>
+        <div id="addam"></div>
+        <!--input type="submit" onclick="start()" value="Input start ammount"-->
+        <input type="submit" onclick="addammount()" value="Input new ammount">
+        <button type="submit" onclick="calc()">Calculat ammount</button>
+        <div id="result"></div>
+        <button type="submit" id="restarter" onclick="restart()">Restart new calculation</button>
+    </div>
+
+    <script>
+        var exp;
+        var expenses =[]
+        
+        function addammount() { 
+            document.getElementById("addam").innerHTML = expenses.push(parseInt(prompt("Input new ammount")));  
+            document.getElementById("addam").innerHTML = expenses;
+        }
+
+       function calc() {
+           
+       }
+        
+        function restart() {
+            exp1 = res;
+            document.getElementById("start").innerHTML = exp1;
+            document.getElementById("addam").innerHTML = 0;
+            document.getElementById("result").innerHTML = 0;
+        }
+    </script>	
+
+
+</body>
+</html>
