@@ -23,7 +23,7 @@
 
 <script>
 var exp1;
-var exp2;
+var exp2 = [];
 var res;
 
 document.getElementById("start").innerHTML = 0;
@@ -35,12 +35,12 @@ return;
 }
 
 function addammount() {
-exp2 = parseInt(prompt("Input new ammount"));
+    document.getElementById("addam").innerHTML = exp2.push(parseFloat(prompt("Input new ammount")))
 document.getElementById("addam").innerHTML = exp2;
 }
 
 function calc() {
-res = exp1 + exp2;
+    let res = exp2.reduce((sum, current) => sum + current);
 document.getElementById("result").innerHTML = res;
 }
 
