@@ -1,0 +1,39 @@
+.box-start, .box-new, .box-result {
+    display: inline-block;
+    padding: 6px;
+    margin: 4px;
+    width: 160px;
+    height: 100px; 
+}
+
+.box-start {
+    background-color: #fdefdd;
+    color: #491111;
+    border: 1px silid #393f08;
+}
+
+.box-new {
+  
+    background-color: #e0f7ce;
+    color: #3b1717;
+    border: 1px silid #3f2108;
+}
+
+.box-result {
+ 
+    background-color: #cde7f1;
+    color: #0e0d29;
+    border: 1px silid #08263f;
+}
+
+.box-restart {
+    display: inline-block;
+    padding: 8px;
+    margin-left: 26px;
+    background-color: #8a0839;
+    border: 1px silid #08263f;
+}
+
+#start, #addam, #result {
+    margin-top: 20px;
+}

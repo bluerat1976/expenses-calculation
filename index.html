@@ -9,44 +9,74 @@
 
 <body>
 
-<h2 EXpenses counter</h2>
+<h2> Expenses counter</h2>
 <div>
-
-<div id="start"></div>
-<div id="addam"></div>
-<input type="submit" onclick="start()" value="Input start ammount">
-<input type="submit" onclick="addammount()" value="Input new ammount">
-<button type="submit" onclick="calc()">Calculat ammount</button>
-<div id="result"></div>
-<button type="submit" id="restarter" onclick="restart()">Restart new calculation</button>
+    
+    <div class="box-start">
+        <h4>Total</h4>
+        <div id="start"> </div>
+    </div>
+    
+    <div class="box-new">
+        <input type="submit" onclick="addammount()" value="Input new ammount">
+        <div id="addam"></div>
+    </div>
+    
+    <div class="box-result">
+        <button type="submit" onclick="calc()">Calculat ammount</button>
+        <div id="result"></div>
+    </div>
+    
+    <div class="box-restart">
+        <button type="submit" id="restarter" onclick="restart()">Restart new calculation</button>
+    </div>
+    
 </div>
 
 <script>
-var exp1;
-var exp2 = [];
-var res;
+    debugger;
+    var exp1 = [0];
+    var exp2;
+    var res;
 
-document.getElementById("start").innerHTML = 0;
+    document.getElementById("start").innerHTML = 0;
 
-function start() {
-exp1 = parseInt(prompt("Input start ammount"));
-document.getElementById("start").innerHTML = exp1;
-return;
-}
+    /*
+    function start() {
+        exp1 = parseInt(prompt("Input start ammount"));
+        document.getElementById("start").innerHTML = exp1;
+        return;
+    }
+    */
+    
+    if(isNaN(parseFloat(prompt("Input new ammount"))) == false) {
+        
+        function addammount() {
+            document.getElementById("addam").innerHTML = exp1.push(parseFloat(prompt("Input new ammount"))); 
+            document.getElementById("addam").innerHTML = exp1;
+            return;
+            
+        }
+               
+            } else {
+                parseFloat(prompt('Vrong value. Input new ammount'));
+            }  
+   
+/* function addammount() {
+        document.getElementById("addam").innerHTML = exp2.push(parseFloat(prompt("Input new ammount")));
+         document.getElementById("addam").innerHTML = exp2;
+    }
+*/
 
-function addammount() {
-    document.getElementById("addam").innerHTML = exp2.push(parseFloat(prompt("Input new ammount")))
-document.getElementById("addam").innerHTML = exp2;
-}
 
-function calc() {
-    let res = exp2.reduce((sum, current) => sum + current);
-document.getElementById("result").innerHTML = res;
-}
+    function calc() {
+         res = exp2.reduce((sum, current) => sum + current);
+        document.getElementById("result").innerHTML = res;
+    }
 
 function restart() {
-exp1 = res;
-document.getElementById("start").innerHTML = exp1;
+
+document.getElementById("start").innerHTML = res;
 document.getElementById("addam").innerHTML = 0;
 document.getElementById("result").innerHTML = 0;
 }
