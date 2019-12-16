@@ -34,12 +34,9 @@
 </div>
 
 <script>
-    debugger;
-    var exp1 = [0];
+    var exp1 = [];
     var exp2;
     var res;
-
-    document.getElementById("start").innerHTML = 0;
 
     /*
     function start() {
@@ -47,20 +44,19 @@
         document.getElementById("start").innerHTML = exp1;
         return;
     }
-    */
+    */ 
     
-    if(isNaN(parseFloat(prompt("Input new ammount"))) == false) {
-        
-        function addammount() {
-            document.getElementById("addam").innerHTML = exp1.push(parseFloat(prompt("Input new ammount"))); 
-            document.getElementById("addam").innerHTML = exp1;
-            return;
-            
-        }
-               
-            } else {
-                parseFloat(prompt('Vrong value. Input new ammount'));
-            }  
+    function addammount() { //YES!!!
+        exp2 = parseFloat(prompt("Input new ammount")); 
+        if(isNaN(exp2) == true) {
+           exp2 = parseFloat(prompt('Vrong value. Input new ammount'));   
+           document.getElementById("addam").innerHTML = exp1.push(exp2); 
+            document.getElementById("addam").innerHTML = exp1;  
+           } else {
+            document.getElementById("addam").innerHTML = exp1.push(exp2); 
+            document.getElementById("addam").innerHTML = exp1;       
+        }   
+    }
    
 /* function addammount() {
         document.getElementById("addam").innerHTML = exp2.push(parseFloat(prompt("Input new ammount")));
@@ -70,7 +66,7 @@
 
 
     function calc() {
-         res = exp2.reduce((sum, current) => sum + current);
+         res = exp1.reduce((sum, current) => sum + current);
         document.getElementById("result").innerHTML = res;
     }
 
