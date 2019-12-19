@@ -39,6 +39,7 @@
 </div>
 
 <script>
+    
     var exp1 = [];
     var exp2;
     var res;
@@ -66,7 +67,8 @@
                     document.getElementById("addam").innerHTML = exp1.push(null);
                     document.getElementById("addam").innerHTML = exp1; 
                 }
-        }   
+        } 
+        
     }
 
     function delet() {
@@ -79,12 +81,11 @@
         document.getElementById("result").innerHTML = +res.toFixed(2);
     }
 
-function restart() {
-
-document.getElementById("total").innerHTML = +res.toFixed(2);
-document.getElementById("addam").innerHTML = 0;
-document.getElementById("result").innerHTML = 0;
-}
+    function restart() {
+        document.getElementById("total").innerHTML = +res.toFixed(2);
+        document.getElementById("addam").innerHTML = 0;
+        document.getElementById("result").innerHTML = 0;
+    }
 </script>	
 
 </body>
