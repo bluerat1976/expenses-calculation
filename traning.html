@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html> 
+<head>
+<meta charset="utf-8">
+<title>Counter of expenses</title>
+<link rel="stylesheet" type="text/css" href="style.css"> 
+
+</head>
+
+<body>
+
+<h2> Expenses counter</h2>
+<div>
+    
+  <input type="submit" onclick="User()" value="Add new user">
+    <div id="add"></div>
+    
+</div>
+
+<script>
+    
+    function User() {
+        this.name = "vasia";
+        
+    }
+ 
+    
+   
+    document.getElementById("add").html = User.name;
+    
+    
+</script>	
+
+</body>
+</html>
