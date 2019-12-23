@@ -12,22 +12,23 @@
 <h2> Expenses counter</h2>
 <div>
     
-  <input type="submit" onclick="User()" value="Add new user">
-    <div id="add"></div>
+  <input type="submit" onmouseover="add()" value="Add new thing">
+  <div class="box-result" id="box"> </div>
     
 </div>
 
 <script>
+  
+    var obj = {};
+    var exp1 = [];
+    var exp2 = [];
     
-    function User() {
-        this.name = "vasia";
-        
+   obj.exp3 = [2, 3, 4];
+    for(var prop in obj) {
+        alert (obj.key);
     }
- 
     
    
-    document.getElementById("add").html = User.name;
-    
     
 </script>	
 
