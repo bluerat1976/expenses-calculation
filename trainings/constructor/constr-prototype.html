@@ -16,23 +16,24 @@
         this.y = y;
     };
     
-   var drawCar = function(car) {
-        //var carHtml = "<img src='https://v3toys.ru/kiwi-public-data/Kiwi_Img/2-526.png'>";
+   Car.prototype.draw = function() {
+        
       var carHtml = '<img src="red-car.jpg">';
-       var carElem = $(carHtml);
+       this.carElem = $(carHtml);
        
-       carElem.css ({
+       this.carElem.css ({
            position: 'absolute',
-           left: car.x,
-           top: car.y
+           left: this.x,
+           top: this.y
        });
        
-       $('body').append(carElem);
+       $('body').append(this.carElem);
    };
-    var tesla = new Car(20, 20);
+    var tesla = new Car(60, 80);
     var nissan = new Car(160, 350);
-    drawCar(tesla);
-    drawCar(nissan);
+
+    tesla.draw();
+    nissan.draw();
     
 </script>	
 
