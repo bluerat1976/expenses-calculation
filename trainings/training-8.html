@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <meta charset="utf-8">
+    <title>Training</title>
+    
+   <style>
+        #myAnimation {
+            
+    
+    
+    }
+    </style> 
+</head>
+
+<body>
+
+    <h2 id="main">Hello </h2>
+    
+   
+    
+    <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+    
+    
+    <script>
+        var a;
+        var counter = 1;
+        
+        var print = function() {
+            $('#main').append(counter);
+            counter++;  
+        };
+        
+        var interval = setInterval(print, 1000);
+        
+        
+    </script>	
+
+</body>
+</html>

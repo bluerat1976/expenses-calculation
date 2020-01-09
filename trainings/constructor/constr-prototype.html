@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <meta charset="utf-8">
+    <title>Constructor</title>
+</head>
+
+<body>
+
+<h2 id="main"> Constructor</h2>
+<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+<script>
+ 
+    var Car = function(x, y) {
+        this.x = x;
+        this.y = y;
+    };
+    
+   Car.prototype.draw = function() {
+        
+      var carHtml = '<img src="red-car.jpg">';
+       this.carElem = $(carHtml);
+       
+       this.carElem.css ({
+           position: 'absolute',
+           left: this.x,
+           top: this.y
+       });
+       
+       $('body').append(this.carElem);
+   };
+    var tesla = new Car(60, 80);
+    var nissan = new Car(160, 350);
+
+    tesla.draw();
+    nissan.draw();
+    
+</script>	
+
+</body>
+</html>

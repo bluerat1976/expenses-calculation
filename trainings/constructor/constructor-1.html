@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <meta charset="utf-8">
+    <title>Constructor</title>
+</head>
+
+<body>
+
+<h2 id="main"> Constructor</h2>
+<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+<script>
+ 
+    var Car = function(x, y) {
+        this.x = x;
+        this.y = y;
+    };
+    
+   var drawCar = function(car) {
+        //var carHtml = "<img src='https://v3toys.ru/kiwi-public-data/Kiwi_Img/2-526.png'>";
+      var carHtml = '<img src="red-car.jpg">';
+       var carElem = $(carHtml);
+       
+       carElem.css ({
+           position: 'absolute',
+           left: car.x,
+           top: car.y
+       });
+       
+       $('body').append(carElem);
+   };
+    var tesla = new Car(20, 20);
+    var nissan = new Car(160, 350);
+    drawCar(tesla);
+    drawCar(nissan);
+    
+</script>	
+
+</body>
+</html>

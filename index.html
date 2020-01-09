@@ -35,12 +35,18 @@
         <button type="submit" id="del" onclick="delet()">Delete last figure</button>
     </div>
     
+    <div class="box-restart">
+        <button type="submit" id="addcounter" onclick="addcounter()">Add new counter</button>
+    </div>
+    
 </div>
 
 <script>
+    
     var exp1 = [];
     var exp2;
     var res;
+    
 
     /*
     function start() {
@@ -65,7 +71,8 @@
                     document.getElementById("addam").innerHTML = exp1.push(null);
                     document.getElementById("addam").innerHTML = exp1; 
                 }
-        }   
+        } 
+        
     }
 
     function delet() {
@@ -78,12 +85,16 @@
         document.getElementById("result").innerHTML = +res.toFixed(2);
     }
 
-function restart() {
-
-document.getElementById("total").innerHTML = +res.toFixed(2);
-document.getElementById("addam").innerHTML = 0;
-document.getElementById("result").innerHTML = 0;
-}
+    function restart() {
+        document.getElementById("total").innerHTML = +res.toFixed(2);
+        document.getElementById("addam").innerHTML = 0;
+        document.getElementById("result").innerHTML = 0;
+    }
+    
+    function addcounter () {
+        
+    }
+    
 </script>	
 
 </body>
