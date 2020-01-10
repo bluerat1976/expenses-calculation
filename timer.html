@@ -10,8 +10,12 @@
 
     <h1> Project timer</h1>
     
+   <div class='newdata'>
+        <input type="submit" onclick="newD()" value="Date of start new project">
+        <p id='data'></p>
+    </div>
     <div>
-        <input type="text" value="1" id="test">
+        <input type="text" value="1" id="timer">
         <input type="submit" value="start" onclick="start()">
         <input type="submit" value="stop" onclick="stop()">
     </div>
@@ -21,16 +25,21 @@
     
     <script>
         
+        function newD() {
+            var d = new Date();
+            document.getElementById('data').innerHTML = d; 
+        }
+        
         function start() {
         window.timerId = window.setInterval(timer, 1000); 
         }
-        
+         
         function stop() {
             window.clearInterval(window.timerId);
         }
         
         function timer () {
-            var elem = document.getElementById("test");
+            var elem = document.getElementById("timer");
             elem.value = parseInt(elem.value) + 1;
         }
     

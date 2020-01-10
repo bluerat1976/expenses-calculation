@@ -3,66 +3,70 @@
 <head>
     <meta charset="utf-8">
     <title>Constructor</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
 
     <h2 id="main"> Constructor of counter</h2>
+    
     <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
     
     <script>
         
+        var Counter = function(exp2) {
+            
+           this.addammount = function() { //YES!!!
+               var exp2 = parseFloat(prompt("Input new ammount")); 
+            if(isNaN(exp2) == false) {
+                document.getElementById("addam").innerHTML = exp1.push(+exp2.toFixed(2)); 
+                document.getElementById("addam").innerHTML = exp1;     
+            } else {
+                exp2 = parseFloat(prompt('Vrong value. Input new ammount'));   
+            
+                if(exp2 == Number(exp2)) {
+                    document.getElementById("addam").innerHTML = exp1.push(+exp2.toFixed(2)); 
+                    document.getElementById("addam").innerHTML = exp1;  
+                    } else {
+                        document.getElementById("addam").innerHTML = exp1.push(null);
+                        document.getElementById("addam").innerHTML = exp1; 
+                    }
+                } 
         
-        var Counter = function(x, y) {
-            this.x = x;
-            this.y = y;
-        };
+            }
+
+            this.delet = function() {
+                document.getElementById("addam").innerHTML = exp1.pop();
+                document.getElementById("addam").innerHTML = exp1;
+            }
+
+            this.calc = function() {
+                res = exp1.reduce((sum, current) => sum + current);
+                document.getElementById("result").innerHTML = +res.toFixed(2);
+            }
+
+            this.restart = function() {
+                document.getElementById("total").innerHTML = +res.toFixed(2);
+                document.getElementById("addam").innerHTML = 0;
+                document.getElementById("result").innerHTML = 0;
+            }
     
         Counter.prototype.draw = function() {
         
-            var counterHtml = 
-                    '<input type="submit" onclick="addammount()" value="Input new ammount">' 
-                    '<div id="addam"></div>'
-                
-            this.counterElem = $(counterHtml);
+            var addHtml = '<div></div>';
+            this.addElem = $(addHtml);
        
-            this.counterElem.css ({
-                position: 'relative',
-                left: this.x,
-                top: this.y
-            });
+            this.addElem.css ({
+                color: '#cccccc',
+                fontFamily: 'Arial',
+                fontSize: 15,
+            }); 
        
-            $('body').append(this.counterElem);
+            $('body').append(this.addElem); 
         };
-        
-         var expens = new Counter(20, 30);
-         expens.draw();
-        
-            var exp1 = [];
-            var exp2;
-            var res;
-    
-         function addammount() { //YES!!!
-        exp2 = parseFloat(prompt("Input new ammount")); 
-        if(isNaN(exp2) == false) {
-            document.getElementById("addam").innerHTML = exp1.push(+exp2.toFixed(2)); 
-            document.getElementById("addam").innerHTML = exp1;     
-           } else {
-            exp2 = parseFloat(prompt('Vrong value. Input new ammount'));   
             
-            if(exp2 == Number(exp2)) {
-                document.getElementById("addam").innerHTML = exp1.push(+exp2.toFixed(2)); 
-                document.getElementById("addam").innerHTML = exp1;  
-                } else {
-                    document.getElementById("addam").innerHTML = exp1.push(null);
-                    document.getElementById("addam").innerHTML = exp1; 
-                }
-        } 
-        
-    }
-
-        
+        var farm = new Counter(25);
+         farm.draw();   
+          
     </script>	
 
 </body>
