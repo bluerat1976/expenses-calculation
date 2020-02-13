@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8">
     <title>Counter of expenses</title>
-    
+    <link href="timer.css" type="stylesheet">
+     
 </head>
 
 <body>
@@ -15,42 +16,14 @@
         <p id='data'></p>
     </div>
     <div>
-        <input type="text" value="1" id="timer">
+        <input type="text" value="0" id="timer">
         <input type="submit" value="start" onclick="start()">
         <input type="submit" value="stop" onclick="stop()">
     </div>
 
     <p id="data"></p>
-
-    
-    <script>
-        
-        function newD() {
-            var d = new Date();
-            document.getElementById('data').innerHTML = d; 
-        }
-        
-        function start() {
-        window.timerId = window.setInterval(timer, 1000); 
-        }
-         
-        function stop() {
-            window.clearInterval(window.timerId);
-        }
-        
-        function timer () {
-            var elem = document.getElementById("timer");
-            elem.value = parseInt(elem.value) + 1;
-        }
-    
-    </script>
-    
-    
-    <script>
-      
-     
-    </script>
-
+    <script src="timer.js"></script>
+   
 </body>
 </html>
 
