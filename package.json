@@ -19,5 +19,6 @@
   "homepage": "https://github.com/bluerat1976/expenses-calculation#readme",
   "devDependencies": {
     "node-sass": "^4.13.0"
-  }
+  },
+  "dependencies": {}
 }

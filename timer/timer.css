@@ -1,0 +1,49 @@
+
+h1 {
+    background-color: #f5c072;
+    padding: 10px;
+    
+}
+
+#newname {
+    margin-left: 10px;
+    color: #0d2f42;
+}
+
+
+.newdata {
+    border: 1px solid #7d8188;
+}
+
+#data {
+    margin-left: 10px;
+    color: #07151d;
+    font-size: 18px;
+}
+.newdata input {
+    display: inline-block;
+    width: 300px;
+    padding: 8px 0 8px 0;
+    background-color: #257499ec;
+    color: #fffaf3;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.newtimer {
+    border: 1px solid #7d8188;
+    margin-top: 20px;
+}
+.newtimer #timer {
+    display: inline-block;
+    width: 260px;
+    padding: 9px;
+    background-color: #fffaf3;
+    font-size: 16px;
+}
+ input {
+    display: block;
+    margin: 10px;
+    width: 150px;
+    
+}

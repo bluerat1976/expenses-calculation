@@ -3,25 +3,30 @@
 <head>
     <meta charset="utf-8">
     <title>Counter of expenses</title>
-    <link href="timer.css" type="stylesheet">
-     
+    <link href="./timer.css" >
+    <link rel="stylesheet" type="text/css" media="screen" href="timer.css"/> 
 </head>
 
 <body>
 
     <h1> Project timer</h1>
+
+    <!--input type="submit" value="Add new project" onclick="startNew()"-->
     
    <div class='newdata'>
+        <input type="submit" onclick="newtName()" value="Input new project name">
+        <h2 id="newname"></h2>
         <input type="submit" onclick="newD()" value="Date of start new project">
         <p id='data'></p>
     </div>
-    <div>
+    <div class="newtimer">
         <input type="text" value="0" id="timer">
         <input type="submit" value="start" onclick="start()">
         <input type="submit" value="stop" onclick="stop()">
     </div>
 
     <p id="data"></p>
+
     <script src="timer.js"></script>
    
 </body>
