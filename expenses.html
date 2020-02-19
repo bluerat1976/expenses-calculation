@@ -9,37 +9,36 @@
 
 <body>
 
-<h2> Expenses counter</h2>
-<div>
-    
-    <div class="box-total">
-        <h4>Total</h4>
-        <div id="total"> </div>
-    </div>
-    
-   <div class="box-new">
-        <input type="submit" onclick="addammount()" value="Input new ammount"> 
-        <div id="addam"></div>
-    </div>
+    <h2> Expenses counter</h2>
 
-    <div class="box-result">
-        <button type="submit" onclick="calc()">Calculate ammount</button>
-        <div id="result"></div>
-    </div>
+    <div>
+        <div class="box-total">
+            <h4>Total</h4>
+            <div id="total"> </div>
+        </div>
     
-    <div class="box-restart">
-        <button type="submit" id="restarter" onclick="restart()">Restart new calculation</button>
-    </div>
+        <div class="box-new">
+            <input type="submit" onclick="addammount()" value="Input new ammount"> 
+            <div id="addam"></div>
+        </div>
 
-    <div class="box-delete">
-        <button type="submit" id="del" onclick="delet()">Delete last figure</button>
-    </div>
+        <div class="box-result">
+            <button type="submit" onclick="calc()">Calculate ammount</button>
+            <div id="result"></div>
+        </div>
     
-    <div class="box-restart">
-        <button type="submit" id="addcounter" onclick="addcounter()">Add new counter</button>
-    </div>
+        <div class="box-restart">
+            <button type="submit" id="restarter" onclick="restart()">Restart new calculation</button>
+        </div>
+
+        <div class="box-delete">
+            <button type="submit" id="del" onclick="delet()">Delete last figure</button>
+        </div>
     
-</div>
+        <div class="box-restart">
+            <button type="submit" id="addcounter" onclick="addcounter()">Add new counter</button>
+        </div>
+    </div>
 
 <script src="expenses.js"></script>
 

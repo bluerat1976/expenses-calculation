@@ -13,6 +13,8 @@ function start() {
 
 function addammount() { //YES!!!
     exp2 = parseFloat(prompt("Input new ammount")); 
+
+    //if input contains at list one letter -> wrong number -> input new number
     if(isNaN(exp2) == false) {
         document.getElementById("addam").innerHTML = exp1.push(+exp2.toFixed(2)); 
         document.getElementById("addam").innerHTML = exp1;     
