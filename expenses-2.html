@@ -12,37 +12,35 @@
     <h2> Expenses counter</h2>
 
     <div>
-        <div id="start"></div>
-        <div id="addam"></div>
-        <!--input type="submit" onclick="start()" value="Input start ammount"-->
-        <input type="submit" onclick="addammount()" value="Input new ammount">
-        <button type="submit" onclick="calc()">Calculat ammount</button>
-        <div id="result"></div>
-        <button type="submit" id="restarter" onclick="restart()">Restart new calculation</button>
+        <div class="box-total">
+            <h4>Total</h4>
+            <div id="total"> </div>
+        </div>
+    
+        <div class="box-new">
+            <input id="adding" type="text" size="50" onclick="addammount()" placeholder="Input new ammount"> 
+            <div id="addam"></div>
+        </div>
+
+        <div class="box-result">
+            <button type="submit" onclick="calc()">Calculate ammount</button>
+            <div id="result"></div>
+        </div>
+    
+        <div class="box-restart">
+            <button type="submit" id="restarter" onclick="restart()">Restart new calculation</button>
+        </div>
+
+        <div class="box-delete">
+            <button type="submit" id="del" onclick="delet()">Delete last figure</button>
+        </div>
+    
+        <div class="box-restart">
+            <button type="submit" id="addcounter" onclick="addcounter()">Add new counter</button>
+        </div>
     </div>
 
-    <script>
-        var exp;
-        var expenses =[];
-        
-        function addammount() { 
-            document.getElementById("addam").innerHTML = expenses.push(parseFloat(prompt("Input new ammount")));  
-            document.getElementById("addam").innerHTML = expenses;
-        }
-
-       function calc() {
-        res = exp1 + exp2;
-    document.getElementById("result").innerHTML = res;
-       }
-        
-        function restart() {
-            exp1 = res;
-            document.getElementById("start").innerHTML = exp1;
-            document.getElementById("addam").innerHTML = 0;
-            document.getElementById("result").innerHTML = 0;
-        }
-    </script>	
-
+<script src="expenses.js"></script>
 
 </body>
 </html>

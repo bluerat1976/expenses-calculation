@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html> 
+<head>
+<meta charset="utf-8">
+<title>Training</title>
+
+
+</head>
+
+<body>
+
+<h2> Hello World</h2>
+<div>
+    <input id="input" type="submit" size="80" value="Input ammount">
+    <p id="result"></p>
+</div>
+  
+    
+    <script>
+        
+       let figure;
+        let inp = document.getElementById('input');
+        let box = document.getElementById('result');
+
+        inp.addEventListener('click', addAmmount)
+
+        function addAmmount() {
+            figure = Number(prompt('Input ammount'))
+            
+            if(figure == isNaN) {   
+             figure = (prompt('Wrong number. Input other one.'));
+                box.innerHTML = figure;
+                } else {
+                    box.innerHTML = figure;
+                }
+
+
+            box.innerHTML = figure;
+            /*
+            for(let i =0; i < figure.value.length; i++) {
+                if(inp.value !== isNaN) {
+                    box.value = figure;
+                } else 
+                 box.innerHTML = inp.value;
+            }
+            */
+        }
+
+       
+            
+    </script>	
+
+</body>
+</html>
