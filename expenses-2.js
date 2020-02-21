@@ -1,3 +1,4 @@
+
 let exp1 = [];
 let exp2;
 let res;
@@ -10,42 +11,40 @@ function start() {
     return;
 }
 */ 
- add.addEventListener('keyup', addAmmount);
+ add.addEventListener('oncl', addAmmount);
 
  function addAmmount() { //YES!!!
    
-    //exp2 = parseFloat(prompt("Input new ammount")); 
-
-    //if input contains at list one letter -> wrong number -> input new number
-    for(let i = 0; i < add.value.length; i++) {
-        if(add.value[i] != isNaN) {
-            document.getElementById("addam").innerHTML = exp1.push(+add.value[i].toFixed(2)); 
+    exp2 = Number(prompt("Input ammount")); 
+       
+    // use cycle for ... while ...
+    
+    if(isNaN(exp2) !== true) {
+            document.getElementById("addam").innerHTML = exp1.push(" "+`${exp2.toFixed(2)} ` ); 
             document.getElementById("addam").innerHTML = exp1;     
            } else {
-            prompt('Vrong value. Input new ammount');   
+             alert("Wrong number") 
+            } 
+         
+        }
+    /*
+         function addAmmount() {
+            figure = Number(prompt('Input ammount'))
             
-            if(exp2 == Number(exp2)) {
-                document.getElementById("addam").innerHTML = exp1.push(+add.toFixed(2)); 
-                document.getElementById("addam").innerHTML = exp1;  
-            } else {
-                document.getElementById("addam").innerHTML = exp1.push(null);
-                document.getElementById("addam").innerHTML = exp1; 
-            }
-        } 
-    }
-    
-   
-    
-}
+            if(figure !== isNaN) {   
+                box.innerHTML = figure;
+             
+                } else {   
+                    let a = (prompt('Wrong number. Input other one.'));
+                    box.innerHTML = a;
+                }
 
-/*
-    При любых ошибках преобразования оператор "+" возвращает NaN.
 
-var str = "123bc"
-+str // NaN
-parseInt(str,10) // 123
-
-*/
+            box.innerHTML = figure;
+              
+        }
+    */
+ 
 
 
 
@@ -55,8 +54,8 @@ function delet() {
 }
 
 function calc() {
-     res = exp1.reduce((sum, current) => sum + current);
-    document.getElementById("result").innerHTML = +res.toFixed(2);
+    res = exp1.reduce((sum, current) => sum + current);
+   document.getElementById("result").innerHTML = res;
 }
 
 function restart() {

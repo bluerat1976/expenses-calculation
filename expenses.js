@@ -1,6 +1,7 @@
-var exp1 = [];
-var exp2;
-var res;
+let exp1 = [];
+let exp2;
+let res;
+
 
 
 /*
@@ -12,35 +13,16 @@ function start() {
 */ 
 
 function addammount() { //YES!!!
-    exp2 = parseFloat(prompt("Input new ammount")); 
-
-    //if input contains at list one letter -> wrong number -> input new number
-    if(isNaN(exp2) == false) {
-        document.getElementById("addam").innerHTML = exp1.push(+exp2.toFixed(2)); 
-        document.getElementById("addam").innerHTML = exp1;     
-       } else {
-        exp2 = parseFloat(prompt('Vrong value. Input new ammount'));   
-        
-        if(exp2 == Number(exp2)) {
-            document.getElementById("addam").innerHTML = exp1.push(+exp2.toFixed(2)); 
-            document.getElementById("addam").innerHTML = exp1;  
-        } else {
-            document.getElementById("addam").innerHTML = exp1.push(null);
-            document.getElementById("addam").innerHTML = exp1; 
+    exp2 = Number(prompt("Input ammount")); 
+       
+    if(isNaN(exp2) !== true) {
+            document.getElementById("addam").innerHTML = exp1.push(" "+`${exp2.toFixed(2)}`); 
+            document.getElementById("addam").innerHTML = exp1;     
+           } else {
+             alert("Wrong number") 
+            } 
+         
         }
-    } 
-    
-}
-
-/*
-    При любых ошибках преобразования оператор "+" возвращает NaN.
-
-var str = "123bc"
-+str // NaN
-parseInt(str,10) // 123
-
-*/
-
 
 
 function delet() {
@@ -48,13 +30,23 @@ function delet() {
     document.getElementById("addam").innerHTML = exp1;
 }
 
-function calc() {
-     res = exp1.reduce((sum, current) => sum + current);
-    document.getElementById("result").innerHTML = +res.toFixed(2);
+
+    function calc() {
+     res = exp1.reduce(function(sum, elem) {
+        return sum + elem;
+    }, 0);
+    
+    document.getElementById("result").innerHTML = res;
+    
+    // check the function 'reduce' for array!!!!
+    //res = exp1.reduce((sum, current) => sum + current);
+    //document.getElementById("result").innerHTML = res;
 }
 
+
+
 function restart() {
-    document.getElementById("total").innerHTML = +res.toFixed(2);
+    document.getElementById("total").innerHTML = res.toFixed(2);
     document.getElementById("addam").innerHTML = 0;
     document.getElementById("result").innerHTML = 0;
 }

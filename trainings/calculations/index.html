@@ -17,7 +17,7 @@
   
     
     <script>
-        
+        let fig = [];
        let figure;
         let inp = document.getElementById('input');
         let box = document.getElementById('result');
@@ -27,11 +27,12 @@
         function addAmmount() {
             figure = Number(prompt('Input ammount'))
             
-            if(figure == isNaN) {   
-             figure = (prompt('Wrong number. Input other one.'));
-                box.innerHTML = figure;
-                } else {
-                    box.innerHTML = figure;
+            if(figure !== isNaN) {   
+                box.innerHTML = fig.push(figure);
+             
+                } else {   
+                    let a = (prompt('Wrong number. Input other one.'));
+                   // box.innerHTML = a;
                 }
 
 
@@ -46,6 +47,7 @@
             */
         }
 
+        
        
             
     </script>	
