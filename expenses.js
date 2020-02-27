@@ -1,8 +1,7 @@
 let exp1 = [];
 let exp2;
-let res;
-
-
+let res = document.getElementById('result');
+let sum = 0;
 
 /*
 function start() {
@@ -16,13 +15,12 @@ function addammount() { //YES!!!
     exp2 = Number(prompt("Input ammount")); 
        
     if(isNaN(exp2) !== true) {
-            document.getElementById("addam").innerHTML = exp1.push(" "+`${exp2.toFixed(2)}`); 
-            document.getElementById("addam").innerHTML = exp1;     
-           } else {
-             alert("Wrong number") 
-            } 
-         
-        }
+        document.getElementById("addam").innerHTML = exp1.push(" "+`${exp2.toFixed(2)}`); 
+        document.getElementById("addam").innerHTML = exp1;     
+    } else {
+            alert("Wrong number") 
+            }        
+}
 
 
 function delet() {
@@ -31,22 +29,38 @@ function delet() {
 }
 
 
-    function calc() {
-     res = exp1.reduce(function(sum, elem) {
-        return sum + elem;
+
+function calc() {
+   /*
+    let sum = 0;
+    for(let i=0; i < exp1.length; i++) {
+       sum += exp1[i]
+    }
+      */    
+     /*   
+   let summa = exp1.reduce((sum, elem)=> {
+         sum + elem;
     }, 0);
+   */
+
+    if (exp1.length) {
+        sum = exp1.reduce((a, b) => {
+            return (parseFloat(a) || 0) + (parseFloat(b) || 0);
+        });
+    } else {
+        sum = 0;
+    }
     
-    document.getElementById("result").innerHTML = res;
-    
-    // check the function 'reduce' for array!!!!
-    //res = exp1.reduce((sum, current) => sum + current);
-    //document.getElementById("result").innerHTML = res;
+    console.log(sum.toFixed(2))
+    res.innerHTML = sum.toFixed(2)
 }
 
-
+// check the function 'reduce' for array!!!!
+    //res = exp1.reduce((sum, current) => sum + current);
+    //document.getElementById("result").innerHTML = res;
 
 function restart() {
-    document.getElementById("total").innerHTML = res.toFixed(2);
+    document.getElementById("total").innerHTML = sum.toFixed(2);
     document.getElementById("addam").innerHTML = 0;
     document.getElementById("result").innerHTML = 0;
 }

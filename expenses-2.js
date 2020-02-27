@@ -1,9 +1,9 @@
 
 let exp1 = [];
 let exp2;
-let res;
 let add = document.getElementById('adding')
-
+let res = document.getElementById('result');
+let sum = 0;
 /*
 function start() {
     exp1 = parseInt(prompt("Input start ammount"));
@@ -46,16 +46,33 @@ function start() {
     */
  
 
-
-
 function delet() {
     document.getElementById("addam").innerHTML = exp1.pop();
     document.getElementById("addam").innerHTML = exp1;
 }
 
 function calc() {
-    res = exp1.reduce((sum, current) => sum + current);
-   document.getElementById("result").innerHTML = res;
+    
+        if(exp1.length) {
+            sum = exp1.reduce((a, b) => {
+            return (parseFloat(a) ) + (parseFloat(b));
+            }); 
+
+            console.log(sum)
+            res.innerHTML = sum
+        } else {
+            res.innerHTML = '';
+        }
+       
+   
+    
+    
+
+
+    /*
+    res = exp1.reduce((sum, current) =>  sum + current);
+    sum.innerHTML = res;
+    */
 }
 
 function restart() {
