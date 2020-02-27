@@ -52,28 +52,23 @@ function delet() {
 }
 
 function calc() {
-    
+    /* Works good.
         if(exp1.length) {
             sum = exp1.reduce((a, b) => {
             return (parseFloat(a) ) + (parseFloat(b));
             }); 
-
-            console.log(sum)
+            //console.log(sum)
             res.innerHTML = sum
         } else {
             res.innerHTML = '';
         }
-       
-   
+       */
     
+    sum = exp1.reduce((sum, current) => {return (parseFloat(sum) + parseFloat(current))});
+    res.innerHTML = sum
     
-
-
-    /*
-    res = exp1.reduce((sum, current) =>  sum + current);
-    sum.innerHTML = res;
-    */
 }
+
 
 function restart() {
     document.getElementById("total").innerHTML = +res.toFixed(2);

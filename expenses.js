@@ -26,33 +26,22 @@ function addammount() { //YES!!!
 function delet() {
     document.getElementById("addam").innerHTML = exp1.pop();
     document.getElementById("addam").innerHTML = exp1;
+
+    calc()
 }
 
 
-
 function calc() {
-   /*
-    let sum = 0;
-    for(let i=0; i < exp1.length; i++) {
-       sum += exp1[i]
-    }
-      */    
-     /*   
-   let summa = exp1.reduce((sum, elem)=> {
-         sum + elem;
-    }, 0);
-   */
-
+ 
     if (exp1.length) {
         sum = exp1.reduce((a, b) => {
-            return (parseFloat(a) || 0) + (parseFloat(b) || 0);
+           return (parseFloat(a)) + (parseFloat(b));   
         });
+       // console.log(sum.toFixed(2))
+       res.innerHTML = sum;
     } else {
-        sum = 0;
-    }
-    
-    console.log(sum.toFixed(2))
-    res.innerHTML = sum.toFixed(2)
+        res.innerHTML = '';
+    }  
 }
 
 // check the function 'reduce' for array!!!!
