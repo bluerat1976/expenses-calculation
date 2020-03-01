@@ -16,7 +16,6 @@ function typeExpCounter() {
     expType.innerHTML = typename;
     box.appendChild(expType);
 
-    addammount();
     delet();
     restart()
 }
