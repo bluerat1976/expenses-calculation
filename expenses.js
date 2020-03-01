@@ -1,15 +1,25 @@
+
 let exp1 = [];
-let exp2;
+let exp2 = 0;
 let res = document.getElementById('result');
 let sum = 0;
 
-/*
-function start() {
-    exp1 = parseInt(prompt("Input start ammount"));
-    document.getElementById("start").innerHTML = exp1;
-    return;
+let monthly = document.querySelector('#month')
+
+
+
+function typeExpCounter() {
+    let typename = prompt('Input name of expenses type')
+    let expType = document.createElement('h2');
+    let box = document.getElementById('expname');
+    //box.appendChild(expType);
+    expType.innerHTML = typename;
+    box.appendChild(expType);
+
+    addammount();
+    delet();
+    restart()
 }
-*/ 
 
 function addammount() { //YES!!!
     exp2 = Number(prompt("Input ammount")); 
@@ -19,7 +29,9 @@ function addammount() { //YES!!!
         document.getElementById("addam").innerHTML = exp1;     
     } else {
             alert("Wrong number") 
-            }        
+            } 
+            
+            calc()        
 }
 
 
@@ -49,11 +61,33 @@ function calc() {
     //document.getElementById("result").innerHTML = res;
 
 function restart() {
+    // can not add one first figure to Current total!!!!!!!!!
     document.getElementById("total").innerHTML = sum.toFixed(2);
     document.getElementById("addam").innerHTML = 0;
     document.getElementById("result").innerHTML = 0;
 }
 
+
+/*
 function addcounter () {
     
 }
+
+function funk() {
+    for(let i = 0; i<12; i++) {
+        let monthTotal = document.createElement('li');
+        monthTotal.innerHTML = 'Total per month'
+        monthly.appendChild(monthTotal)
+    }
+}
+
+funk()
+*/
+
+/*
+function start() {
+    exp1 = parseInt(prompt("Input start ammount"));
+    document.getElementById("start").innerHTML = exp1;
+    return;
+}
+*/ 

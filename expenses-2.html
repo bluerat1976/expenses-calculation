@@ -10,37 +10,67 @@
 <body>
 
     <h2> Expenses counter</h2>
-
-    <div>
+    
+    <div id='main-calc'>
         <div class="box-total">
-            <h4>Total</h4>
-            <div id="total"> </div>
+            <div class="box-current-total">
+                <h3>Current <br> Total</h3>
+                <div id="total"> </div>
+            </div>    
+
+            <ul id='month'>
+                <li>January</li>
+                <li>February</li>
+                <li>March</li>
+                <li>April</li>
+                <li>May</li>
+                <li>June</li>
+                <li>July</li>
+                <li>August</li>
+                <li>September</li>
+                <li>October</li>
+                <li>November</li>
+                <li>December</li>
+            </ul>
         </div>
     
-        <div class="box-new">
-            <button id="adding" type="submitt" size="50" onclick="addAmmount()">Input ammount </button>
-            <div id="addam"></div>
+        <div class="box-action">
+            <button type="submit" id="exptype" onclick="typeExpCounter()">Add new expenses type counter</button>
         </div>
 
-        <div class="box-result">
-            <button type="submit" onclick="calc()">Calculate ammount</button>
-            <div id="result"></div>
-        </div>
-    
-        <div class="box-restart">
-            <button type="submit" id="restarter" onclick="restart()">Restart new calculation</button>
+        <!--div id="box-new">
+            <div>
+                <div id="expname"></div>
+                <button type="submit" onclick="addammount()" value="Input ammount">Input expenses</button>
+            </div>
+
+            <div id="addam">0</div>
+
+            <div class="current-amount">
+                <h4>Current<br>Sum</h4>
+                <div id="result">0</div>
+            </div>    
+        </div-->
+
+        <!--div class="box-result">
+            <button type="submit" onclick="calc()">Calculate sum of current expenses</button>
+        </div-->
+        
+        
+        <div class="box-action">
+            <button type="submit" id="restarter" onclick="restart()">Restart current calculation</button>
         </div>
 
-        <div class="box-delete">
+        <div class="box-action">
             <button type="submit" id="del" onclick="delet()">Delete last figure</button>
         </div>
     
-        <div class="box-restart">
+        <!--div class="box-action">
             <button type="submit" id="addcounter" onclick="addcounter()">Add new counter</button>
-        </div>
+        </div-->
     </div>
 
-<script src="expenses-2.js"></script>
+<script src="expenses.js"></script>
 
 </body>
 </html>

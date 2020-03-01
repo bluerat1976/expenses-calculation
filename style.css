@@ -1,51 +1,56 @@
-.box-total, .box-new, .box-result {
-  display: block;
-  padding: 6px;
-  margin: 4px;
-  width: 160px;
-  height: 110px; }
+#main-calc {
+  display: flex;
+  flex-flow: column wrap; }
 
-.box-total {
+.box-total, #box-new, .box-result {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 8px;
+  margin-left: 30px;
+  margin-top: 26px;
+  background-color: #ebebeb;
   border: 1px solid #055285; }
 
-.box-new {
-  border: 1px solid #8a1125; }
+.box-total .box-current-total {
+  text-align: center;
+  padding-left: 20px; }
+  .box-total .box-current-total h3 {
+    font-weight: bold;
+    color: #490421; }
+  .box-total .box-current-total #total {
+    border: 1px solid #0a4270; }
 
-.box-result {
-  border: 1px solid #0a4270; }
+#box-new div button {
+  margin-right: 20px;
+  font-size: 16px; }
 
-.box-restart {
-  display: inline-block;
-  padding: 8px;
-  margin-left: 26px;
-  margin-top: 26px;
-  background-color: #fcb8b8;
-  border: 1px solid #08263f; }
+#box-new #addam {
+  flex: 1 1 70%;
+  border: 1px solid #4f5f6d; }
 
-.box-delete {
-  display: inline-block;
-  padding: 8px;
-  margin-left: 26px;
-  margin-top: 26px;
-  background-color: #fdf36b;
-  border: 1px solid #08263f; }
+#box-new .current-amount {
+  flex: 1 1 5%;
+  border: 1px solid #4f5f6d;
+  padding: 0 20px;
+  text-align: center; }
 
-#start, #addam, #result {
-  margin-top: 24px; }
+#box-new #result {
+  border: 1px solid #4f5f6d; }
 
-button {
+.box-action button {
+  font-size: 16px;
   font-weight: bold;
   color: #ffffff;
-  background-color: #046ec4;
-  padding: 4px 6px; }
+  background-color: #571424;
+  padding: 8px 14px;
+  margin-top: 10px;
+  margin-left: 30px; }
 
-input {
-  font-weight: bold;
-  color: #62330d;
-  background-color: #96b3d4;
-  padding: 4px 6px; }
-
-h4 {
-  font-size: 22px;
-  font-weight: bold;
-  color: #750433; }
+#month {
+  display: flex;
+  flex-flow: row wrap; }
+  #month li {
+    display: flex;
+    flex-flow: row wrap;
+    flex: 1 1 150px;
+    border: 1px solid #536b7e; }
