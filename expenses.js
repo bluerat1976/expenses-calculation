@@ -5,9 +5,31 @@ let res = document.getElementById('result');
 let sum = 0;
 
 let monthly = document.querySelector('#month')
+let expType = document.getElementById('exptype')
+expType.addEventListener('click', getName)
+//expType.addEventListener('click', funk2)
 
 
 
+function getName() {
+
+    let typename = prompt('Input name of expenses type')
+    let expName = document.getElementById('expname')
+    let h2 = document.createElement('h2');
+    h2.innerHTML = typename;
+    expName.appendChild(h2);
+} 
+
+/*
+function funk2 () {
+     let div = document.createElement('div');
+     div.setAttribute('class', 'box2');
+     
+     box.appendChild(div)
+}
+*/
+
+/*
 function typeExpCounter() {
     let typename = prompt('Input name of expenses type')
     let expType = document.createElement('h2');
@@ -19,6 +41,7 @@ function typeExpCounter() {
     delet();
     restart()
 }
+*/
 
 function addammount() { //YES!!!
     exp2 = Number(prompt("Input ammount")); 
