@@ -22,13 +22,15 @@
 
 #box-new div button {
   margin-right: 20px;
-  font-size: 16px; }
+  font-size: 16px;
+  background-color: #055285;
+  color: #ffffff; }
 
 #box-new #addam {
   flex: 1 1 70%;
   border: 1px solid #4f5f6d; }
 
-#box-new .current-amount {
+#box-new #current-amount {
   flex: 1 1 5%;
   border: 1px solid #4f5f6d;
   padding: 0 20px;
@@ -37,11 +39,20 @@
 #box-new #result {
   border: 1px solid #4f5f6d; }
 
-.box-action button {
+.box-action #exptype {
   font-size: 16px;
   font-weight: bold;
   color: #ffffff;
   background-color: #571424;
+  padding: 8px 14px;
+  margin-top: 10px;
+  margin-left: 30px; }
+
+.box-action #restarter, .box-action #del {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #003b62;
   padding: 8px 14px;
   margin-top: 10px;
   margin-left: 30px; }

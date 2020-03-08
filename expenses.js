@@ -4,21 +4,80 @@ let exp2 = 0;
 let res = document.getElementById('result');
 let sum = 0;
 
+
+
 let monthly = document.querySelector('#month')
+
 let expType = document.getElementById('exptype')
-expType.addEventListener('click', getName)
-//expType.addEventListener('click', funk2)
+expType.addEventListener('click', getType)
+
+let expName = document.createElement('div')
+expName.setAttribute('id', 'expname')
 
 
+let btnRemove = document.createElement('button')
+btnRemove.addEventListener('click', removeCounter)
 
-function getName() {
 
-    let typename = prompt('Input name of expenses type')
-    let expName = document.getElementById('expname')
-    let h2 = document.createElement('h2');
-    h2.innerHTML = typename;
-    expName.appendChild(h2);
+function getType() { 
+    
+ createNewCounter()
+    createRemoveType() 
+   
 } 
+
+function createNewCounter() {
+    
+    let boxNewCounter = document.createElement('div')
+    boxNewCounter.setAttribute('id', 'box-new')
+    document.body.appendChild(boxNewCounter)
+
+    let h2 = document.createElement('h2');
+    let typename = prompt('Input name of expenses type')
+    h2.innerHTML = typename;
+    boxNewCounter.appendChild(h2);
+
+    let boxDiv = document.createElement('div')
+    boxNewCounter.appendChild(boxDiv)
+
+    let btnInpExp = document.createElement('button')
+    btnInpExp.setAttribute('type', 'submit')
+    btnInpExp.innerHTML = 'Input expenses'
+    boxNewCounter.appendChild(btnInpExp)
+
+    let boxAddAmmount = document.createElement('div')
+    boxAddAmmount.setAttribute('id', 'addam')
+    boxNewCounter.appendChild(boxAddAmmount)
+
+    let boxCurrentSum = document.createElement('div')
+    boxCurrentSum.setAttribute('id', 'current-amount')
+    boxNewCounter.appendChild(boxCurrentSum) // created / exists
+
+    let h4 = document.createElement('h4')
+    h4.innerHTML = 'Current Sum'
+    boxCurrentSum.appendChild(h4)
+
+    let boxRes = document.createElement('div')
+    boxRes.setAttribute('id', 'result')
+    boxCurrentSum.appendChild(boxRes)
+}
+
+function createRemoveType() {
+    btnRemove.setAttribute('type', 'submit')
+    btnRemove.innerHTML = 'Remove expenses type'
+    expName.appendChild(btnRemove) 
+}
+
+function removeCounter() {
+    expName.removeChild(btnRemove)
+    expName.removeChild(h2);
+}
+      
+    
+       
+
+
+
 
 /*
 function funk2 () {
