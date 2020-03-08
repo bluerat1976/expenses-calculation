@@ -1,9 +1,9 @@
-#main-calc {
+.main-calc {
     display: flex;
     flex-flow: column wrap;
 }
 
-.box-total, #box-new, .box-result {
+.box-total, .box-new, .box-result {
     display: flex;
     flex-flow: row wrap;
     padding: 8px;
@@ -30,7 +30,7 @@
     }
 }
 
-#box-new {
+.box-new {
 
    div button {
        margin-right: 20px;
@@ -39,18 +39,18 @@
        color: #ffffff;
    }
 
-    #addam {
+    .addam {
         flex: 1 1 70%;
         border: 1px solid #4f5f6d;
     }
 
-    #current-amount {
+    .current-amount {
         flex: 1 1 5%;
         border: 1px solid #4f5f6d;
         padding: 0 20px;
         text-align: center;
     }
-    #result {
+    .result {
         border: 1px solid #4f5f6d;
     }
 }

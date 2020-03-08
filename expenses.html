@@ -11,7 +11,7 @@
 
     <h2> Expenses counter</h2>
     
-    <div id='main-calc'>
+    <div class='main-calc'>
         <div class="box-total">
             <div class="box-current-total">
                 <h3>Current <br> Total</h3>
@@ -40,14 +40,16 @@
 
 
         <!--Dinamic content creation-->
-
-        <div class="box-action">
+        <div id='content'>
+            
+        </div>
+        <!--div class="box-action">
             <button type="submit" id="restarter" onclick="restart()">Restart current calculation</button>
-        </div>
+        </div-->
 
-        <div class="box-action">
+        <!--div class="box-action">
             <button type="submit" id="del" onclick="delet()">Delete last figure</button>
-        </div>
+        </div-->
     
         <!--div class="box-action">
             <button type="submit" id="addcounter" onclick="addcounter()">Add new counter</button>

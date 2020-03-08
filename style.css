@@ -1,8 +1,8 @@
-#main-calc {
+.main-calc {
   display: flex;
   flex-flow: column wrap; }
 
-.box-total, #box-new, .box-result {
+.box-total, .box-new, .box-result {
   display: flex;
   flex-flow: row wrap;
   padding: 8px;
@@ -20,23 +20,23 @@
   .box-total .box-current-total #total {
     border: 1px solid #0a4270; }
 
-#box-new div button {
+.box-new div button {
   margin-right: 20px;
   font-size: 16px;
   background-color: #055285;
   color: #ffffff; }
 
-#box-new #addam {
+.box-new .addam {
   flex: 1 1 70%;
   border: 1px solid #4f5f6d; }
 
-#box-new #current-amount {
+.box-new .current-amount {
   flex: 1 1 5%;
   border: 1px solid #4f5f6d;
   padding: 0 20px;
   text-align: center; }
 
-#box-new #result {
+.box-new .result {
   border: 1px solid #4f5f6d; }
 
 .box-action #exptype {

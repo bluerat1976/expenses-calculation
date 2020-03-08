@@ -1,120 +1,85 @@
 
-let exp1 = [];
-let exp2 = 0;
-let res = document.getElementById('result');
+let exp1 = [0];
+//let exp2 = 0;
 let sum = 0;
-
-
 
 let monthly = document.querySelector('#month')
 
+let boxCont = document.getElementById('content')
+
 let expType = document.getElementById('exptype')
-expType.addEventListener('click', getType)
+expType.addEventListener('click', createNewCounter)
+let boxCurrentSum = document.createElement('div')
 
-let expName = document.createElement('div')
-expName.setAttribute('id', 'expname')
-
-
-let btnRemove = document.createElement('button')
-btnRemove.addEventListener('click', removeCounter)
-
-
-function getType() { 
-    
- createNewCounter()
-    createRemoveType() 
-   
-} 
+let boxRes = document.createElement('div')
+//let expName = document.createElement('div')
+//expName.setAttribute('id', 'expname')
 
 function createNewCounter() {
-    
-    let boxNewCounter = document.createElement('div')
-    boxNewCounter.setAttribute('id', 'box-new')
-    document.body.appendChild(boxNewCounter)
+    boxCont.addEventListener('click', addammount)
 
-    let h2 = document.createElement('h2');
-    let typename = prompt('Input name of expenses type')
-    h2.innerHTML = typename;
-    boxNewCounter.appendChild(h2);
+    let boxNewCounter = document.createElement('div')
+    boxNewCounter.setAttribute('class', 'box-new')
+    document.body.appendChild(boxNewCounter)
 
     let boxDiv = document.createElement('div')
     boxNewCounter.appendChild(boxDiv)
 
+    let h2 = document.createElement('h2');
+    let typename = prompt('Input name of expenses type')
+    h2.innerHTML = typename;
+    boxDiv.appendChild(h2);
+
     let btnInpExp = document.createElement('button')
     btnInpExp.setAttribute('type', 'submit')
-    btnInpExp.innerHTML = 'Input expenses'
-    boxNewCounter.appendChild(btnInpExp)
+    btnInpExp.innerHTML = ' Input expenses'
+    boxDiv.appendChild(btnInpExp)
+    
+/*
+    let btnCurren.Sum = document.createElement('button')
+    btnCurrentSum.setAttribute('type', 'submit') 
+    btnCurrentSum.innerHTML = 'Get current sum'
+    boxDiv.appendChild(btnCurrentSum)
+    btnCurrentSum.addEventListener('click', calc)
+*/
+    let btnDelLast = document.createElement('button')
+    btnDelLast.setAttribute('type', 'submit')
+    btnDelLast.innerHTML = 'Delete last figure'
+    boxDiv.appendChild(btnDelLast)
+    
+    let btnRemove = document.createElement('button')
+    btnRemove.setAttribute('type', 'submit')
+    btnRemove.innerHTML = 'Remove counter'
+    boxDiv.appendChild(btnRemove)
+
+    //btnRemove.addEventListener('click', removeCounter)
 
     let boxAddAmmount = document.createElement('div')
-    boxAddAmmount.setAttribute('id', 'addam')
+    boxAddAmmount.setAttribute('class', 'addam')
     boxNewCounter.appendChild(boxAddAmmount)
 
-    let boxCurrentSum = document.createElement('div')
-    boxCurrentSum.setAttribute('id', 'current-amount')
+    boxCurrentSum.setAttribute('class', 'current-amount')
     boxNewCounter.appendChild(boxCurrentSum) // created / exists
 
     let h4 = document.createElement('h4')
     h4.innerHTML = 'Current Sum'
     boxCurrentSum.appendChild(h4)
 
-    let boxRes = document.createElement('div')
-    boxRes.setAttribute('id', 'result')
-    boxCurrentSum.appendChild(boxRes)
 }
 
-function createRemoveType() {
-    btnRemove.setAttribute('type', 'submit')
-    btnRemove.innerHTML = 'Remove expenses type'
-    expName.appendChild(btnRemove) 
-}
-
-function removeCounter() {
-    expName.removeChild(btnRemove)
-    expName.removeChild(h2);
-}
-      
-    
-       
-
-
-
-
-/*
-function funk2 () {
-     let div = document.createElement('div');
-     div.setAttribute('class', 'box2');
-     
-     box.appendChild(div)
-}
-*/
-
-/*
-function typeExpCounter() {
-    let typename = prompt('Input name of expenses type')
-    let expType = document.createElement('h2');
-    let box = document.getElementById('expname');
-    //box.appendChild(expType);
-    expType.innerHTML = typename;
-    box.appendChild(expType);
-
-    delet();
-    restart()
-}
-*/
-
-function addammount() { //YES!!!
+function addammount(event) { //YES!!!
+    let exp2 = event.target  
     exp2 = Number(prompt("Input ammount")); 
        
     if(isNaN(exp2) !== true) {
-        document.getElementById("addam").innerHTML = exp1.push(" "+`${exp2.toFixed(2)}`); 
-        document.getElementById("addam").innerHTML = exp1;     
+        document.getElementsByClassName("addam").innerHTML = exp1.push(" "+`${exp2.toFixed(2)}`); 
+        document.getElementsByClassName("addam").innerHTML = exp1;     
     } else {
             alert("Wrong number") 
             } 
             
-            calc()        
+    calc()        
 }
-
 
 function delet() {
     document.getElementById("addam").innerHTML = exp1.pop();
@@ -123,31 +88,34 @@ function delet() {
     calc()
 }
 
-
 function calc() {
- 
+    
+    boxRes.setAttribute('class', 'result')
+    boxCurrentSum.appendChild(boxRes) 
     if (exp1.length) {
         sum = exp1.reduce((a, b) => {
            return (parseFloat(a)) + (parseFloat(b));   
         });
        // console.log(sum.toFixed(2))
-       res.innerHTML = sum;
-    } else {
-        res.innerHTML = '';
-    }  
+       boxRes.innerHTML = sum;
+    }
+   else {
+       boxRes.innerHTML = '0';
+    }   
 }
+
 
 // check the function 'reduce' for array!!!!
     //res = exp1.reduce((sum, current) => sum + current);
     //document.getElementById("result").innerHTML = res;
-
+/*
 function restart() {
     // can not add one first figure to Current total!!!!!!!!!
     document.getElementById("total").innerHTML = sum.toFixed(2);
     document.getElementById("addam").innerHTML = 0;
     document.getElementById("result").innerHTML = 0;
 }
-
+*/
 
 /*
 function addcounter () {
@@ -172,3 +140,42 @@ function start() {
     return;
 }
 */ 
+
+
+/*
+function createRemoveType() {
+    btnRemove.setAttribute('type', 'submit')
+    btnRemove.innerHTML = 'Remove expenses type'
+    expName.appendChild(btnRemove) 
+}
+*/
+
+/*
+function removeCounter() {
+    expName.removeChild(btnRemove)
+    expName.removeChild(h2);
+}
+ */     
+    
+/*
+function funk2 () {
+     let div = document.createElement('div');
+     div.setAttribute('class', 'box2');
+     
+     box.appendChild(div)
+}
+*/
+
+/*
+function typeExpCounter() {
+    let typename = prompt('Input name of expenses type')
+    let expType = document.createElement('h2');
+    let box = document.getElementById('expname');
+    //box.appendChild(expType);
+    expType.innerHTML = typename;
+    box.appendChild(expType);
+
+    delet();
+    restart()
+}
+*/
