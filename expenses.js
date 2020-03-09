@@ -43,6 +43,12 @@ function createNewCounter() {
     boxDiv.appendChild(btnRemove)
     btnRemove.addEventListener('click', removeCounter)
 
+    let btnAddTotal = document.createElement('button')
+    btnAddTotal.setAttribute('type', 'submit')
+    btnAddTotal.innerHTML = 'Add sum to total'
+    boxDiv.appendChild(btnAddTotal)
+    btnAddTotal.addEventListener('click', restart)
+
     let boxAddAmmount = document.createElement('div')
     boxAddAmmount.setAttribute('class', 'addam')
     boxNewCounter.appendChild(boxAddAmmount)
@@ -113,20 +119,31 @@ function createNewCounter() {
     }
 
 
+   function restart() {
+    // can not add one first figure to Current total!!!!!!!!!
+    let sumCurrentTotal = []
+    sumCurrentTotal.push(sum.toFixed(2))
+
+    for(let i = 0; i <= sumCurrentTotal.length; i++) {
+    sumCurrentTotal[i] += sum.toFixed(2)
+    }   
+    alert(sumCurrentTotal)
+
+    //document.getElementById("total").innerHTML = sum.toFixed(2);
+    //document.getElementsByClassName("addam").innerHTML = 0;
+    //document.getElementsByClassName("result").innerHTML = 0;
+    }
+
+
 }
 
+ 
 
 
 // check the function 'reduce' for array!!!!
     //res = exp1.reduce((sum, current) => sum + current);
     //document.getElementById("result").innerHTML = res;
 
-function restart() {
-    // can not add one first figure to Current total!!!!!!!!!
-    document.getElementById("total").innerHTML = sum.toFixed(2);
-    document.getElementById("addam").innerHTML = 0;
-    document.getElementById("result").innerHTML = 0;
-}
 
 
 /*
