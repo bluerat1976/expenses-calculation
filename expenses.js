@@ -5,12 +5,14 @@ let monthly = document.querySelector('#month')
 
 let expType = document.getElementById('exptype')
 expType.addEventListener('click', createNewCounter)
+let sum;
+let z = 0;
+
 
 
 function createNewCounter() {
-   
+  
     let exp1 = [];
-    let sum = 0;
 
     let boxNewCounter = document.createElement('div')
     boxNewCounter.setAttribute('class', 'box-new')
@@ -47,7 +49,7 @@ function createNewCounter() {
     btnAddTotal.setAttribute('type', 'submit')
     btnAddTotal.innerHTML = 'Add sum to total'
     boxDiv.appendChild(btnAddTotal)
-    btnAddTotal.addEventListener('click', restart)
+    btnAddTotal.addEventListener('click', addToTotal)
 
     let boxAddAmmount = document.createElement('div')
     boxAddAmmount.setAttribute('class', 'addam')
@@ -90,6 +92,7 @@ function createNewCounter() {
     } 
 
      let boxRes = document.createElement('div')
+     boxRes.setAttribute('class', 'result')
 
      function delet() {
         boxAddAmmount.innerHTML = exp1.pop();
@@ -108,18 +111,42 @@ function createNewCounter() {
             });
            // console.log(sum.toFixed(2))
            boxRes.innerHTML = sum;
+           
         }
        else {
-           boxRes.innerHTML = '0';
-        }   
+           boxRes.innerHTML = ' ';
+        }
+        
     } 
-    
+
     function removeCounter() {
         document.body.removeChild(boxNewCounter)
     }
+     
+   function addToTotal() {
+   let totalSum = [];
+    document.getElementById('total').innerHTML = totalSum
+    
+    
+    let x = Number(boxRes.innerHTML)
+    totalSum.push(x) 
+
+    for(let i = 0; i < totalSum.length; i++)  {
+        z += totalSum[i]
+        console.log(totalSum)
+    }
+   
+    document.getElementById('total').innerHTML = z       
+    }
+    
+    addToTotal()
+}
 
 
-   function restart() {
+ 
+
+/*
+function restart() {
     // can not add one first figure to Current total!!!!!!!!!
     let sumCurrentTotal = []
     sumCurrentTotal.push(sum.toFixed(2))
@@ -132,12 +159,9 @@ function createNewCounter() {
     //document.getElementById("total").innerHTML = sum.toFixed(2);
     //document.getElementsByClassName("addam").innerHTML = 0;
     //document.getElementsByClassName("result").innerHTML = 0;
-    }
-
-
 }
+*/
 
- 
 
 
 // check the function 'reduce' for array!!!!
