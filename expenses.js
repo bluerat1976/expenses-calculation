@@ -104,7 +104,7 @@ function createNewCounter() {
         boxCurrentSum.appendChild(boxRes) 
         if (exp1.length) {
             sum = exp1.reduce((a, b) => {
-               return (parseFloat(a)) + (parseFloat(b));   
+               return (parseFloat(a) || 0) + (parseFloat(b) || 0);   
             });
            // console.log(sum.toFixed(2))
            boxRes.innerHTML = sum;
