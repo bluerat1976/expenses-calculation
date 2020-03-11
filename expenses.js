@@ -8,6 +8,7 @@ let sum;
 let totalSum = [];
 
 function createNewCounter() {
+    
     let exp1 = [];
 
     let boxNewCounter = document.createElement('div')
@@ -56,19 +57,22 @@ function createNewCounter() {
     boxCurrentSum.setAttribute('class', 'current-amount')
     boxNewCounter.appendChild(boxCurrentSum) // created / exists
 
+    let curS = document.createElement('div')
+    curS.setAttribute('class', 'curSum')
+    boxDiv.appendChild(curS)
+
     let h4 = document.createElement('h4')
     h4.innerHTML = 'Current Sum'
     boxCurrentSum.appendChild(h4)
 
     function addammount() { //YES!!!
-        declean()
+        
         let fig = document.createElement('p')
         fig.setAttribute('style', true)
         fig.style.display = 'inline'
         //fig.setAttribute('class', 'addam' ) 
         
-        
-
+    
         let amm = Number(prompt("Input ammount")); 
             
         if(isNaN(amm) !== true) {
@@ -86,21 +90,24 @@ function createNewCounter() {
             alert("Wrong number")  
         }  
 
-        calc()  
+        calc() 
+         
     } 
 
      let boxRes = document.createElement('div')
      boxRes.setAttribute('class', 'result')
 
      function delet() {
+         
         boxAddAmmount.innerHTML = exp1.pop();
         boxAddAmmount.innerHTML = exp1;
-
+        
         calc()
+        
     }
 
     function calc() {
-        declean()
+        
         boxRes.setAttribute('class', 'result')
         boxCurrentSum.appendChild(boxRes) 
         if (exp1.length) {
@@ -108,7 +115,8 @@ function createNewCounter() {
                return (parseFloat(a) || 0) + (parseFloat(b) || 0);   
             });
            // console.log(sum.toFixed(2))
-           boxRes.innerHTML = sum;   
+           boxRes.innerHTML = sum; 
+           curS.innerHTML = sum;  
         }
        else {
            boxRes.innerHTML = ' ';
@@ -121,9 +129,9 @@ function createNewCounter() {
     }
      
     function addToTotal() {
-       
+        
         let z = 0;
-    
+        
         let x = Number(boxRes.innerHTML)
         totalSum.push(x) 
 
@@ -133,7 +141,8 @@ function createNewCounter() {
          
         }
          console.log(totalSum)
-        document.getElementById('total').innerHTML = z
+        
+        document.getElementById('total').innerHTML = z.toFixed(2)
        
     boxRes.innerHTML = 0 
         //boxAddAmmount.innerHTML = 0
@@ -144,6 +153,7 @@ function createNewCounter() {
              totalSum.shift()
         }    
     }
+    //declean()
    
 }
  
