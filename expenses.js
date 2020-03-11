@@ -1,17 +1,13 @@
 
 let monthly = document.querySelector('#month')
 
-//let boxCont = document.getElementById('content')
-
 let expType = document.getElementById('exptype')
 expType.addEventListener('click', createNewCounter)
 let sum;
-let z = 0;
 
-
+let totalSum = [];
 
 function createNewCounter() {
-  
     let exp1 = [];
 
     let boxNewCounter = document.createElement('div')
@@ -64,12 +60,14 @@ function createNewCounter() {
     h4.innerHTML = 'Current Sum'
     boxCurrentSum.appendChild(h4)
 
-
     function addammount() { //YES!!!
+        declean()
         let fig = document.createElement('p')
         fig.setAttribute('style', true)
         fig.style.display = 'inline'
         //fig.setAttribute('class', 'addam' ) 
+        
+        
 
         let amm = Number(prompt("Input ammount")); 
             
@@ -102,7 +100,7 @@ function createNewCounter() {
     }
 
     function calc() {
-       
+        declean()
         boxRes.setAttribute('class', 'result')
         boxCurrentSum.appendChild(boxRes) 
         if (exp1.length) {
@@ -110,41 +108,45 @@ function createNewCounter() {
                return (parseFloat(a) || 0) + (parseFloat(b) || 0);   
             });
            // console.log(sum.toFixed(2))
-           boxRes.innerHTML = sum;
-           
+           boxRes.innerHTML = sum;   
         }
        else {
            boxRes.innerHTML = ' ';
-        }
-        
+        }  
+        document.getElementById('total').innerHTML = 0
     } 
 
     function removeCounter() {
         document.body.removeChild(boxNewCounter)
     }
      
-   function addToTotal() {
-   let totalSum = [];
-    document.getElementById('total').innerHTML = totalSum
+    function addToTotal() {
+       
+        let z = 0;
     
-    
-    let x = Number(boxRes.innerHTML)
-    totalSum.push(x) 
+        let x = Number(boxRes.innerHTML)
+        totalSum.push(x) 
 
-    for(let i = 0; i < totalSum.length; i++)  {
+        for(let i = 0; i < totalSum.length; i++)  {
         z += totalSum[i]
-        console.log(totalSum)
+        
+         
+        }
+         console.log(totalSum)
+        document.getElementById('total').innerHTML = z
+       
+    boxRes.innerHTML = 0 
+        //boxAddAmmount.innerHTML = 0
+    }
+  
+    function declean() {
+        for(let i = 0; i < totalSum.length; i++) {
+             totalSum.shift()
+        }    
     }
    
-    document.getElementById('total').innerHTML = z       
-    }
-    
-    addToTotal()
 }
-
-
  
-
 /*
 function restart() {
     // can not add one first figure to Current total!!!!!!!!!
@@ -163,12 +165,9 @@ function restart() {
 */
 
 
-
 // check the function 'reduce' for array!!!!
     //res = exp1.reduce((sum, current) => sum + current);
     //document.getElementById("result").innerHTML = res;
-
-
 
 /*
 function addcounter () {
