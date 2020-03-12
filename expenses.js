@@ -3,13 +3,23 @@ let monthly = document.querySelector('#month')
 
 let expType = document.getElementById('exptype')
 expType.addEventListener('click', createNewCounter)
-let sum;
+let sum = 0;
+let sumT = 0;
+let q = sum;
 
-let totalSum = [];
+//let x;
+//let z = 0;
+
+let tot = document.getElementById('total')
+let s = document.createElement('div')
+
+tot.appendChild(s)
+
+
 
 function createNewCounter() {
-    
     let exp1 = [];
+    
 
     let boxNewCounter = document.createElement('div')
     boxNewCounter.setAttribute('class', 'box-new')
@@ -47,11 +57,11 @@ function createNewCounter() {
     btnAddTotal.innerHTML = 'Add sum to total'
     boxDiv.appendChild(btnAddTotal)
     btnAddTotal.addEventListener('click', addToTotal)
+    
 
     let boxAddAmmount = document.createElement('div')
     boxAddAmmount.setAttribute('class', 'addam')
     boxNewCounter.appendChild(boxAddAmmount)
-
 
     let boxCurrentSum = document.createElement('div')
     boxCurrentSum.setAttribute('class', 'current-amount')
@@ -72,7 +82,6 @@ function createNewCounter() {
         fig.style.display = 'inline'
         //fig.setAttribute('class', 'addam' ) 
         
-    
         let amm = Number(prompt("Input ammount")); 
             
         if(isNaN(amm) !== true) {
@@ -89,25 +98,21 @@ function createNewCounter() {
         } else {        
             alert("Wrong number")  
         }  
-
-        calc() 
-         
+        calc()   
     } 
-
-     let boxRes = document.createElement('div')
-     boxRes.setAttribute('class', 'result')
 
      function delet() {
          
         boxAddAmmount.innerHTML = exp1.pop();
         boxAddAmmount.innerHTML = exp1;
-        
+       
         calc()
-        
     }
 
+    let boxRes = document.createElement('div')
+    boxRes.setAttribute('class', 'result')
+
     function calc() {
-        
         boxRes.setAttribute('class', 'result')
         boxCurrentSum.appendChild(boxRes) 
         if (exp1.length) {
@@ -116,12 +121,13 @@ function createNewCounter() {
             });
            // console.log(sum.toFixed(2))
            boxRes.innerHTML = sum; 
-           curS.innerHTML = sum;  
+           curS.innerHTML = sum; 
+           s.innerHTML = sum 
         }
        else {
            boxRes.innerHTML = ' ';
-        }  
-        document.getElementById('total').innerHTML = 0
+        }   
+       // document.getElementById('total').innerHTML = 0
     } 
 
     function removeCounter() {
@@ -130,33 +136,28 @@ function createNewCounter() {
      
     function addToTotal() {
         
-        let z = 0;
-        
-        let x = Number(boxRes.innerHTML)
-        totalSum.push(x) 
-
-        for(let i = 0; i < totalSum.length; i++)  {
+        totalSum.push(sum)
+        for(let i = 0; i<totalSum.length; i++) {
+            console.log(totalSum[i]) 
         z += totalSum[i]
-        
-         
+        console.log(totalSum[i])
+        let z = totalSum[i]
+        console.log(z)
         }
-         console.log(totalSum)
-        
-        document.getElementById('total').innerHTML = z.toFixed(2)
        
-    boxRes.innerHTML = 0 
-        //boxAddAmmount.innerHTML = 0
+       
     }
-  
+
     function declean() {
         for(let i = 0; i < totalSum.length; i++) {
              totalSum.shift()
         }    
+        console.log(totalSum)
     }
     //declean()
    
 }
- 
+
 /*
 function restart() {
     // can not add one first figure to Current total!!!!!!!!!
