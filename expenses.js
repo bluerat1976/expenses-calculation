@@ -10,11 +10,15 @@ let q = sum;
 //let x;
 //let z = 0;
 
+let outSum = document.createElement('div')
+outSum.setAttribute ('id', 'outsum')
+document.body.appendChild(outSum)
+
 let tot = document.getElementById('total')
 let s = document.createElement('div')
 
 tot.appendChild(s)
-
+let amm
 
 
 function createNewCounter() {
@@ -82,7 +86,7 @@ function createNewCounter() {
         fig.style.display = 'inline'
         //fig.setAttribute('class', 'addam' ) 
         
-        let amm = Number(prompt("Input ammount")); 
+        amm = Number(prompt("Input ammount")); 
             
         if(isNaN(amm) !== true) {
                 
@@ -91,7 +95,8 @@ function createNewCounter() {
             
             boxAddAmmount.innerHTML = exp1.push(" "+`${amm.toFixed(2)}`);   
             boxAddAmmount.innerHTML = exp1;         
-
+              
+          
         //fig.innerHTML = `${amm} +`
         //boxAddAmmount.appendChild(fig) 
         
@@ -99,14 +104,17 @@ function createNewCounter() {
             alert("Wrong number")  
         }  
         calc()   
+        //outSum.innerHTML += amm 
     } 
 
      function delet() {
-         
+        
         boxAddAmmount.innerHTML = exp1.pop();
         boxAddAmmount.innerHTML = exp1;
-       
+     
         calc()
+       
+
     }
 
     let boxRes = document.createElement('div')
@@ -120,9 +128,10 @@ function createNewCounter() {
                return (parseFloat(a) || 0) + (parseFloat(b) || 0);   
             });
            // console.log(sum.toFixed(2))
-           boxRes.innerHTML = sum; 
-           curS.innerHTML = sum; 
+           boxRes.innerHTML = sum;
+           curS.innerHTML = sum
            s.innerHTML = sum 
+           outSum.innerHTML = sum
         }
        else {
            boxRes.innerHTML = ' ';
@@ -148,15 +157,17 @@ function createNewCounter() {
        
     }
 
+    /*
     function declean() {
         for(let i = 0; i < totalSum.length; i++) {
              totalSum.shift()
         }    
         console.log(totalSum)
     }
-    //declean()
-   
+    declean()
+   */
 }
+
 
 /*
 function restart() {
